@@ -8,3 +8,15 @@
     width: 80px;
 
 }
+
+.past{
+    background-color: rgb(174, 174, 174);
+}
+
+.current{
+    background-color: rgb(254, 103, 103);
+}
+
+.future{
+    background-color: rgb(97, 219, 97);
+}
