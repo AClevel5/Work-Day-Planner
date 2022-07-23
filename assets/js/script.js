@@ -50,7 +50,7 @@ function addSaveListeners(elements) {
 }
 addSaveListeners(saveButtons);
 
-// Load Time Slots color from timeSlot funtion and Text from Local Storage
+// Load background Color from timeSlotsColor and text from getTextFromStorage
 function loadTimeSlotsInput(timeSlots){
   timeSlots.forEach(element => {
     let hour = element.dataset.hour
