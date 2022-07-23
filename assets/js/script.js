@@ -11,17 +11,16 @@ function setDate() {
 }
 setDate();
 
-//Function to return a state based on the timeSlot
-function timeSlotColor(timeSlot) {  
+//Function to return a state based on the timeSlot hour vs current hour
+function timeSlotColor(timeSlot, time) {  
         var colorTime = timeSlot.dataset.hour;
-        if (colorTime === currentTime)
+        if (colorTime === time)
             return "current"
-        if (colorTime < currentTime)
+        if (colorTime < time)
             return "past"
-        if (colorTime > currentTime) 
+        if (colorTime > time) 
             return "future" 
 }
-
 
 // Store Text based on Hour
 function storeText(hour, text) {
@@ -31,7 +30,6 @@ function storeText(hour, text) {
 // Get Text from local storage based on hour
 function getTextFromStorage(hour){
   return  localStorage.getItem(hour);
-
 }
 
 //Find input at a certain hour and return value
@@ -52,6 +50,7 @@ function addSaveListeners(elements) {
 }
 addSaveListeners(saveButtons);
 
+// Load Time Slots color from timeSlot funtion and Text from Local Storage
 function loadTimeSlotsInput(timeSlots){
   timeSlots.forEach(element => {
     let hour = element.dataset.hour
@@ -59,13 +58,10 @@ function loadTimeSlotsInput(timeSlots){
     if (storeText !== undefined) {
         element.value = storeText
     }
-    //get text content from local storage
-    //append element text content to what is stored
-    let state = timeSlotColor(element)
+    let state = timeSlotColor(element, currentTime)
     element.classList.add(state);
-    //apply coloring style timeSlotColor();
-  })
 
+  })
 }
 loadTimeSlotsInput(timeSlots)
-//Event listeners to call function to adjust text in html based on click.
+

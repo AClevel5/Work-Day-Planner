@@ -4,8 +4,8 @@
 
 }
 
-#time{
-    width: 80px;
+.time{
+    width: 100px;
 
 }
 
@@ -19,4 +19,15 @@
 
 .future{
     background-color: rgb(97, 219, 97);
+}
+
+.saveBtn {
+    height: 70px; 
+    width: fit-content; 
+    border-radius: 3px;
+}
+
+.input {
+    height: 70px; 
+    text-align: center;
 }
